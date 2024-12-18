@@ -287,10 +287,10 @@ procedure TWPXFactur.StartInvoice(
   var i : Integer;
   begin
      i := Pos('=',sIn);
-     if (i<2) or (i>7) then // 2 * 3 letter codes
+     if (i<4) or (i>8) then // 2 * 3 letter codes
      begin
          Result := sIn;
-         sSubjectCode := '';
+         sContentCode := '';
          sSubjectCode := '';
          if i=1 then Delete(Result,1,1);
      end else
@@ -301,7 +301,7 @@ procedure TWPXFactur.StartInvoice(
         if i>0 then
         begin
            sSubjectCode := Copy(sContentCode,i+1,3);
-           Delete(sContentCode,1, i);
+           Delete(sContentCode,i, 4);
         end else sSubjectCode := '';
      end;
   end;
