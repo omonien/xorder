@@ -1,4 +1,4 @@
-unit WPXFacturEN16931;
+﻿unit WPXFacturEN16931;
 { WPXOrder by WPCubed
   https://github.com/wpcubed/xorder
   https://www.wpcubed.com/xorder
@@ -995,7 +995,7 @@ public
 	property DefinedTradeContact:TTradeContact read get_6;
 	property PostalTradeAddress:TTradeAddress read get_7;
 	property URIUniversalCommunication:TUniversalCommunication read get_8;
-  { The local identification (defined by the seller�s address)
+  { The local identification (defined by the seller’s address)
     of the seller for tax purposes or a reference
     that enables the seller to state his registered tax status.
     Seller tax registration identifier }
