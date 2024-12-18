@@ -1,4 +1,4 @@
-unit WPXFactur;
+Ôªøunit WPXFactur;
 
 { WPXOrder by WPCubed
   https://github.com/wpcubed/xorder
@@ -81,7 +81,7 @@ type
     Days         : Integer;
     // SKONTO
     PaymentDiscountTermsDays : Integer; // i.e. 14. Must be >0
-    PaymentDiscountTermsDescription : String; // 'Bei Zahlung innerhalb 14 Tagen gew‰hren wir 2,0% Skonto.'
+    PaymentDiscountTermsDescription : String; // 'Bei Zahlung innerhalb 14 Tagen gew√§hren wir 2,0% Skonto.'
     PaymentDiscountTermsPercent : Double;
   end;
 
@@ -136,7 +136,7 @@ type
         const Buyer  : TCompanyData;
         const ShipTo : TCompanyData;
         // Optional Fields (or nil)
-        IncludedNotes : TStrings; // optional notes, one by one. Can start with a Code, i.e.  EEV,AAJ=Der Verk‰ufer bleibt Eigent¸mer
+        IncludedNotes : TStrings; // optional notes, one by one. Can start with a Code, i.e.  EEV,AAJ=Der Verk√§ufer bleibt Eigent√ºmer
         OrderData : TOrderData;
         DeliveryData : TDeliveryData;
         PaymentData : TPaymentData
@@ -287,10 +287,10 @@ procedure TWPXFactur.StartInvoice(
   var i : Integer;
   begin
      i := Pos('=',sIn);
-     if (i<2) or (i>7) then // 2 * 3 letter codes
+     if (i<4) or (i>8) then // 2 * 3 letter codes
      begin
          Result := sIn;
-         sSubjectCode := '';
+         sContentCode := '';
          sSubjectCode := '';
          if i=1 then Delete(Result,1,1);
      end else
@@ -301,7 +301,7 @@ procedure TWPXFactur.StartInvoice(
         if i>0 then
         begin
            sSubjectCode := Copy(sContentCode,i+1,3);
-           Delete(sContentCode,1, i);
+           Delete(sContentCode,i, 4);
         end else sSubjectCode := '';
      end;
   end;

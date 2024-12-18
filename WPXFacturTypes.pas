@@ -1,4 +1,4 @@
-unit WPXFacturTypes;
+Ôªøunit WPXFacturTypes;
 { WPXOrder by WPCubed
   https://github.com/wpcubed/xorder
   https://www.wpcubed.com/xorder
@@ -60,9 +60,9 @@ unit WPXFacturTypes;
 {$SCOPEDENUMS ON} // Require the SCOPE
 
   // Rounding
-  (* F¸r positive Zahlen: Aufrunden auf den n‰chsthˆheren Wert. Besipiel: 13,455 auf zwei
+  (* F√ºr positive Zahlen: Aufrunden auf den n√§chsth√∂heren Wert. Besipiel: 13,455 auf zwei
     Nachkommastellen aufgerundet ergibt 13,46.
-    ï F¸r negative Zahlen: Abrunden auf den niedrigeren Wert (so dass das Runden zweier streng
+    ‚Ä¢ F√ºr negative Zahlen: Abrunden auf den niedrigeren Wert (so dass das Runden zweier streng
     entgegengesetzter Zahlen auch streng entgegengesetzte gerundete Zahlen ergeben).
     Beispiel: -13.455 ergibt -13.46. *)
 
@@ -370,18 +370,18 @@ type
   TwpxVATRule = (Undefined, s,
     // S: Standard MwSt-Satz (der dann auch angezeigt werden muss)
     Z, // Z: MwSt-Satz ist Null
-    E, // E: MwSt-befreit (Ñexemptì).
+    E, // E: MwSt-befreit (‚Äûexempt‚Äú).
     AE, // AE: Steuerumkehrung
     K, // K: Steuerumkehrung bei innergemeinschaftlicher Lieferung.
-    G, // G: Steuerbefreiung f¸r Exporte
-    O, // O: Auﬂerhalb des G¸ltigkeitsbereichs der MwSt
-    L, // Sonderregelungen f¸r die Kanarischen Inseln und Ceuta/Melilla.
+    G, // G: Steuerbefreiung f√ºr Exporte
+    O, // O: Au√üerhalb des G√ºltigkeitsbereichs der MwSt
+    L, // Sonderregelungen f√ºr die Kanarischen Inseln und Ceuta/Melilla.
     M);
 
-  // 7.1.10 Umgang mit Steuern auﬂer MwSt, im Fall der WEEE eco-tax
+  // 7.1.10 Umgang mit Steuern au√üer MwSt, im Fall der WEEE eco-tax
   TwpxTaxRule = (Undefined, IncludesVAT, ExcludedVAT);
 
-  // 7.1.11 Zuschl‰ge, Abschl‰ge und Rabatte bzw. Erm‰ﬂigungen
+  // 7.1.11 Zuschl√§ge, Abschl√§ge und Rabatte bzw. Erm√§√üigungen
   // SpecifiedTradeAllowanceCharge
   TwpxAllowanceCharge = (Undefined, Surcharge,
     // Zuschlag, ChargeIndicator = false
@@ -660,7 +660,7 @@ end;
 
   { 41 - Bonus for works ahead of schedule
     42 - Other bonus
-    60 - Manufacturerís consumer discount
+    60 - Manufacturer‚Äôs consumer discount
     62 - Due to military status
     63 - Due to work accident
     64 - Special agreement
@@ -861,21 +861,21 @@ end;
 
      (*
         /// <summary>
-        ///  Die Ware bleibt bis zur vollst‰ndigen Bezahlung
+        ///  Die Ware bleibt bis zur vollst√§ndigen Bezahlung
         ///  unser Eigentum.
         /// </summary>
         EEV,
 
         /// <summary>
-        /// Die Ware bleibt bis zur vollst‰ndigen Bezahlung
+        /// Die Ware bleibt bis zur vollst√§ndigen Bezahlung
         /// aller Forderungen unser Eigentum.
         /// </summary>
         WEV,
 
         /// <summary>
-        /// Die Ware bleibt bis zur vollst‰ndigen Bezahlung
+        /// Die Ware bleibt bis zur vollst√§ndigen Bezahlung
         /// unser Eigentum. Dies gilt auch im Falle der
-        /// Weiterver‰uﬂerung oder -verarbeitung der Ware.
+        /// Weiterver√§u√üerung oder -verarbeitung der Ware.
         /// </summary>
         VEV,
 
@@ -1034,15 +1034,15 @@ end;
 
   TTaxCategory = (
      AE_VAT_Reverse_Charge,
-     // Mehrwertsteuer entf‰llt (befreit)
+     // Mehrwertsteuer entf√§llt (befreit)
      E_Exempt_from_tax,
-     // (B) MwSt. entf‰llt bei Export auﬂerhalb der Europ‰ischen Gemeinschaft
+     // (B) MwSt. entf√§llt bei Export au√üerhalb der Europ√§ischen Gemeinschaft
      G_Free_export_item_tax_not_charged,
      // (EB) Innergemeinschaftliche Lieferung
      K_VAT_exempt_for_EEA,
-     // MwSt f¸r Verk‰ufe in den Gebieten der Kanarischen Inseln
+     // MwSt f√ºr Verk√§ufe in den Gebieten der Kanarischen Inseln
      L_Canary_Islands_general_indirect_tax,
-     // MwSt f¸r Verk‰ufe in den Gebieten von Ceuta und Melilla
+     // MwSt f√ºr Verk√§ufe in den Gebieten von Ceuta und Melilla
      M_Tax_for_psi_Ceuta_and_Melilla,
      // Nicht im Geltunsgbereich
      O_Services_outside_scope_of_tax,
